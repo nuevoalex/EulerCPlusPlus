@@ -9,7 +9,7 @@ class ProblemMap
 {
 	public:
 		static void Problem45();
-		static void problem46();
+		static void Problem46();
 		static void Problem47();
 };
 
