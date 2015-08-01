@@ -19,10 +19,37 @@ What is the smallest odd composite that cannot be written as the sum of a prime 
 
 void ProblemMap::Problem46()
 {
+	const int MAX_NUM = 1000000;
+
 	using namespace Utils;
-	for (int v : Utils::Fib()) {
-		if (v > 50)
-			break;
-		std::cout << v << std::endl;
+
+	Seive seive = Seive(MAX_NUM);
+
+	std::vector<int> twoSquares = std::vector<int>();
+
+	for (int tsi = 0; tsi < MAX_NUM; ++tsi)
+		twoSquares.push_back(2 * pow(tsi, 2));
+
+	for (int i = 33; i < MAX_NUM; i+=2)
+	{
+		bool found = false;
+		for (int ti = 0; ti < MAX_NUM; ++ti)
+		{
+			int tsNum = twoSquares[ti];
+
+			if (tsNum >= i)
+				break;
+
+			if (seive.IsPrime(i - tsNum))
+			{
+				found = true;
+				break;
+			}
+		}
+		if (found)
+			continue;
+
+		std::cout << "NUMBER IS: " << i << std::endl;
+		return;
 	}
 }
