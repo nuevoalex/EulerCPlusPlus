@@ -6,20 +6,33 @@
 // Includes
 #include <iterator>
 #include <vector>
+#include <map>
+#include <unordered_set>
 #include <experimental/generator>
+
+typedef std::vector<int> int_vector;
+typedef std::experimental::generator<int> int_generator;
+typedef std::unordered_set<int> int_set;
 
 namespace Utils
 {
-	typedef std::experimental::generator<int> int_generator;
-
 	class Seive
 	{
 		private:
 			std::vector<bool> NumSet;
 		public:
-			Seive(int n);
+			Seive(int max);
 			bool IsPrime(int n);
 			int_generator PrimeGenerator();
+	};
+
+	class Factorizer
+	{
+	private:
+		std::map<int, int_vector> NumSet;
+	public:
+		Factorizer();
+		int_vector GetFactors(int n);
 	};
 
 	int_generator Fib();

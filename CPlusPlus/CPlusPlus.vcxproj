@@ -70,9 +70,11 @@
     <ClCompile Include="Problem45.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Problem46.cpp" />
+    <ClCompile Include="Problem47.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PrettyPrint.h" />
     <ClInclude Include="ProblemMap.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
