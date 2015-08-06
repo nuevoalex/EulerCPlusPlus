@@ -28,7 +28,7 @@ void ProblemMap::Problem46()
 	std::vector<int> twoSquares = std::vector<int>();
 
 	for (int tsi = 0; tsi < MAX_NUM; ++tsi)
-		twoSquares.push_back(2 * pow(tsi, 2));
+		twoSquares.push_back(2 * (int)pow(tsi, 2.0));
 
 	for (int i = 33; i < MAX_NUM; i+=2)
 	{

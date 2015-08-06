@@ -43,7 +43,7 @@ void ProblemMap::Problem47()
 		{
 			int curNum = curFactors[0];
 			int curVal = curFactors[0];
-			for (int j = 0; j < curFactors.size(); ++j)
+			for (size_t j = 0; j < curFactors.size(); ++j)
 			{
 				if (curFactors[j] == curNum)
 				{
@@ -74,7 +74,7 @@ void ProblemMap::Problem47()
 					failed = true;
 					break;
 				}
-				for (int z = 0; z < curHistoryFactors.size(); ++z)
+				for (size_t z = 0; z < curHistoryFactors.size(); ++z)
 				{
 					int factor = curHistoryFactors[z];
 					if (std::find(seenFactors.begin(), seenFactors.end(), factor) != seenFactors.end())

@@ -64,7 +64,7 @@ namespace Utils
 
 		if (NumSet.find(n) == NumSet.end())
 		{
-			int sq = sqrt(n);
+			int sq = (int)sqrt(n);
 
 			bool isPrime = true;
 			for (int i = 2; i <= sq; ++i)
