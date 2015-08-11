@@ -29,11 +29,11 @@ namespace Utils
 		return NumSet[n];
 	}
 
-	int_generator Seive::PrimeGenerator()
+	int_generator Seive::PrimeGenerator(int index)
 	{
-		unsigned int index = 0;
 		while (index < NumSet.size()) {
-			__yield_value NumSet[index];
+			if (NumSet[index])
+				__yield_value index;
 			++index;
 		}
 	}

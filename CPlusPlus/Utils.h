@@ -23,7 +23,7 @@ namespace Utils
 		public:
 			Seive(int max);
 			bool IsPrime(int n);
-			int_generator PrimeGenerator();
+			int_generator PrimeGenerator(int start = 0);
 	};
 
 	class Factorizer
