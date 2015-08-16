@@ -38,6 +38,22 @@ namespace Utils
 		}
 	}
 
+	bool Utils::IsPowerOfTwo(int x)
+	{
+		return ((x != 0) && !(x & (x - 1)));
+	}
+
+	int_generator Utils::Collatz(int n)
+	{
+		for (;;)
+		{
+			if (IsPowerOfTwo(n))
+				break;
+			__yield_value n;
+			n = (n % 2 == 0) ? n / 2 : (3 * n) + 1;
+		}
+	}
+
 	int_generator Fib()
 	{
 		int a = 0;
@@ -48,6 +64,21 @@ namespace Utils
 			a = b;
 			b = next;
 		}
+	}
+
+	long long FibN(int n)
+	{
+		long long retval = 0;
+		while (n > 0)
+		{
+			for (int i : Fib())
+			{
+				retval = i;
+				n--;
+			}
+		}
+
+		return retval;
 	}
 
 	Factorizer::Factorizer()

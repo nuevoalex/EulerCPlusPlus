@@ -36,6 +36,9 @@ namespace Utils
 	};
 
 	int_generator Fib();
+	long long FibN(int n);
+	bool IsPowerOfTwo(int n);
+	int_generator Collatz(int n);
 }
 
 #endif // UTILS 
