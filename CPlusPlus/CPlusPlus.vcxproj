@@ -76,6 +76,7 @@
     <ClCompile Include="Problem494.cpp" />
     <ClCompile Include="Problem50.cpp" />
     <ClCompile Include="Problem502.cpp" />
+    <ClCompile Include="Problem51.cpp" />
     <ClCompile Include="Problem522.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>

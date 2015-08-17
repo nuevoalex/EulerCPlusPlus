@@ -1,7 +1,5 @@
 #include <algorithm>
 #include <iostream>
-#include <bitset>
-#include <unordered_set>
 #include "ProblemMap.h"
 #include "Utils.h"
 
@@ -18,5 +16,36 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
 
 void ProblemMap::Problem50()
 {
+	const int LIMIT = 1000000;
 
+	Utils::Seive seive = Utils::Seive(LIMIT);
+
+	int longestLength = 0;
+	int sum = 0;
+	int curLength = 0;
+	int topPrime = 0;
+
+	for (int p : seive.PrimeGenerator(2))
+	{
+		curLength = 1;
+		sum = p;
+
+		for (int innerP : seive.PrimeGenerator(p+1))
+		{
+			sum += innerP;
+				 
+			if (sum >= LIMIT)
+				break;
+
+			curLength++;
+
+			if (curLength > longestLength && seive.IsPrime(sum))
+			{
+				longestLength = curLength;
+				topPrime = sum;
+			}
+		}
+	}
+
+	std::cout << topPrime << std::endl;
 }
