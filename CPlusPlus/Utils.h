@@ -20,9 +20,12 @@ namespace Utils
 	{
 		private:
 			std::vector<bool> NumSet;
+
 		public:
 			Seive(int max);
+
 			bool IsPrime(int n);
+
 			int_generator PrimeGenerator(int start = 0);
 	};
 
@@ -30,16 +33,22 @@ namespace Utils
 	{
 	private:
 		std::map<int, int_vector> NumSet;
+
 	public:
 		Factorizer();
+
 		int_vector GetFactors(int n);
 	};
 
 	int_generator Fib();
+
 	long long FibN(int n);
+
 	bool IsPowerOfTwo(int n);
+
 	int_generator Collatz(int n);
 
+	long Factorial(int n);
 }
 
 #endif // UTILS 

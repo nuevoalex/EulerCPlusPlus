@@ -1,10 +1,8 @@
-﻿Build started 8/22/2015 10:30:06 PM.
+﻿Build started 8/24/2015 1:25:41 AM.
      1>Project "C:\Users\Alex\Documents\GitHub\EulerCPlusPlus\CPlusPlus\CPlusPlus.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl- /Od /Oy- /D _MBCS /Gm /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt /await Problem51.cpp
-         Problem51.cpp
-     1>Problem51.cpp(29): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-     1>Problem51.cpp(66): warning C4018: '<': signed/unsigned mismatch
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl- /Od /Oy- /D _MBCS /Gm /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt /await Problem52.cpp
+         Problem52.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Alex\Documents\GitHub\EulerCPlusPlus\Debug\CPlusPlus.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Alex\Documents\GitHub\EulerCPlusPlus\Debug\CPlusPlus.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Alex\Documents\GitHub\EulerCPlusPlus\Debug\CPlusPlus.lib" /MACHINE:X86 Debug\Problem45.obj
          Debug\main.obj
@@ -16,6 +14,7 @@
          Debug\Problem50.obj
          Debug\Problem502.obj
          Debug\Problem51.obj
+         Debug\Problem52.obj
          Debug\Problem522.obj
          Debug\Utils.obj
          CPlusPlus.vcxproj -> C:\Users\Alex\Documents\GitHub\EulerCPlusPlus\Debug\CPlusPlus.exe
@@ -23,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.86
+Time Elapsed 00:00:00.83
