@@ -23,7 +23,7 @@ void ProblemMap::Problem46()
 
 	using namespace Utils;
 
-	Seive seive = Seive(MAX_NUM);
+	Seive seive(MAX_NUM);
 
 	std::vector<int> twoSquares = std::vector<int>();
 

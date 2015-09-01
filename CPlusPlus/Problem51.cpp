@@ -39,7 +39,7 @@ void ProblemMap::Problem51()
 	int const MAX = 1000000;
 	int const GOAL_SERIES_LENGTH = 8;
 
-	Utils::Seive seive = Utils::Seive(MAX);
+	Utils::Seive seive(MAX);
 
 	// 0 indicates a repeat digit index
 	std::array<int, 10> patterns = {
@@ -55,7 +55,7 @@ void ProblemMap::Problem51()
 		0b000111,
 	};
 
-	std::bitset<6> pattern = std::bitset<6>();
+	std::bitset<6> pattern;
 
 	int curNum = 0;
 	int repeatNum = 0;

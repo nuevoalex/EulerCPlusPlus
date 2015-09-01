@@ -17,7 +17,7 @@ What 12-digit number do you form by concatenating the three terms in this sequen
 
 void ProblemMap::Problem49()
 {
-	Utils::Seive seive = Utils::Seive(10000);
+	Utils::Seive seive(10000);
 
 	std::map<std::string, int_vector> permutationCollector = std::map<std::string, int_vector>();
 

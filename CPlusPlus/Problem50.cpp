@@ -18,7 +18,7 @@ void ProblemMap::Problem50()
 {
 	const int LIMIT = 1000000;
 
-	Utils::Seive seive = Utils::Seive(LIMIT);
+	Utils::Seive seive(LIMIT);
 
 	int longestLength = 0;
 	int sum = 0;
