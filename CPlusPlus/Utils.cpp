@@ -130,10 +130,24 @@ namespace Utils
 		return retval;
 	}
 
-	long Factorial(int num)
+	long long Factorial(int num, int min)
 	{
-		if (num == 1)
+		if (num <= min)
 			return 1;
-		return Factorial(num - 1) * num;
+
+		return Factorial(num - 1, min) * num;
+	}
+
+	long nCr(int n, int r)
+	{
+		long long retval = 0;
+
+		long long numerator = Utils::Factorial(n, n - r);
+
+		long long denom = Utils::Factorial(r);
+
+		retval = numerator / denom;
+
+		return retval;
 	}
 }

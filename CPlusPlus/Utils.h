@@ -48,7 +48,9 @@ namespace Utils
 
 	int_generator Collatz(int n);
 
-	long Factorial(int n);
+	long long Factorial(int n, int min = 1);
+
+	long nCr(int n, int r);
 }
 
 #endif // UTILS 
