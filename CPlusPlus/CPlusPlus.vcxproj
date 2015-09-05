@@ -67,6 +67,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Poker.cpp" />
     <ClCompile Include="Problem45.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Problem46.cpp" />
@@ -77,9 +78,11 @@
     <ClCompile Include="Problem51.cpp" />
     <ClCompile Include="Problem52.cpp" />
     <ClCompile Include="Problem53.cpp" />
+    <ClCompile Include="Problem54.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Poker.h" />
     <ClInclude Include="PrettyPrint.h" />
     <ClInclude Include="ProblemMap.h" />
     <ClInclude Include="Utils.h" />
