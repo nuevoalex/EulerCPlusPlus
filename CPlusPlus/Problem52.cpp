@@ -18,11 +18,9 @@ namespace Problem52
 		int mult = 1;
 		int retval = 0;
 
-		int innerNum = num;
-
 		for (int digit = 1; digit < 10; ++digit)
 		{
-			innerNum = num;
+			int innerNum = num;
 			while (innerNum > 0)
 			{
 				if (innerNum % 10 == digit)

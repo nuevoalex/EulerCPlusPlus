@@ -63,6 +63,9 @@
     <ClCompile Include="Poker.cpp">
       <Filter>Source Files\Poker</Filter>
     </ClCompile>
+    <ClCompile Include="Problem55.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProblemMap.h">

@@ -57,27 +57,21 @@ void ProblemMap::Problem51()
 
 	std::bitset<6> pattern;
 
-	int curNum = 0;
-	int repeatNum = 0;
-	int cyclePatternedNum = 0;
-	int repeatPatternedNum = 0;
-	int familySize = 0;
-
 	for (int i = 0; i < patterns.size(); ++i)
 	{
 		pattern = patterns[i];
 
 		for (int j = 0; j < 1000; ++j)
 		{
-			repeatNum = 0;
-			familySize = 0;
-			cyclePatternedNum = generatePatternNum(pattern, j, true);
+			int repeatNum = 0;
+			int familySize = 0;
+			int cyclePatternedNum = generatePatternNum(pattern, j, true);
 
 			while (repeatNum < 1000)
 			{
-				repeatPatternedNum = generatePatternNum(pattern, repeatNum, false);
+				int repeatPatternedNum = generatePatternNum(pattern, repeatNum, false);
 
-				curNum = cyclePatternedNum + repeatPatternedNum;
+				int curNum = cyclePatternedNum + repeatPatternedNum;
 
 				if (seive.IsPrime(curNum))
 					++familySize;

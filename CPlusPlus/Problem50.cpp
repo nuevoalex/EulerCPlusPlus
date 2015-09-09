@@ -21,14 +21,12 @@ void ProblemMap::Problem50()
 	Utils::Seive seive(LIMIT);
 
 	int longestLength = 0;
-	int sum = 0;
-	int curLength = 0;
 	int topPrime = 0;
 
 	for (int p : seive.PrimeGenerator(2))
 	{
-		curLength = 1;
-		sum = p;
+		int curLength = 1;
+		int sum = p;
 
 		for (int innerP : seive.PrimeGenerator(p+1))
 		{

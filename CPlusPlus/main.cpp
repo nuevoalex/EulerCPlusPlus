@@ -5,7 +5,7 @@
 
 void DoCurrentProblem()
 {
-	ProblemMap::Problem54();
+	ProblemMap::Problem55();
 }
 
 int main()
