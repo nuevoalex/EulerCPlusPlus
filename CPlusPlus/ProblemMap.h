@@ -19,6 +19,7 @@ class ProblemMap
 		static void Problem53();
 		static void Problem54();
 		static void Problem55();
+		static void Problem56();
 };
 
 #endif // PROBLEM_MAP 
