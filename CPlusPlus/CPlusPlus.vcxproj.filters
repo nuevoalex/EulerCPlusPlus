@@ -69,6 +69,9 @@
     <ClCompile Include="Problem56.cpp">
       <Filter>Source Files\Problems</Filter>
     </ClCompile>
+    <ClCompile Include="Problem57.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProblemMap.h">

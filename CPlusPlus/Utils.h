@@ -51,6 +51,23 @@ namespace Utils
 	long long Factorial(int n, int min = 1);
 
 	long nCr(int n, int r);
+
+	class BigNum
+	{
+	private:
+		int m_original;
+		int_vector m_digits;
+	public:
+		BigNum(int orig);
+		BigNum(const BigNum& other);
+		void Init(int orig);
+		void Add(const BigNum& other);
+		void Mult(int n);
+		void Exp(int n);
+		int DigitSum();
+		int NumDigits();
+		friend std::ostream& operator<<(std::ostream& os, const BigNum& bigNum);
+	};
 }
 
 #endif // UTILS 
