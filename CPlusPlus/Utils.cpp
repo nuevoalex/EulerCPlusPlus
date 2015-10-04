@@ -8,15 +8,15 @@
 
 namespace Utils
 {
-	Seive::Seive(int n)
+	Seive::Seive(long n)
 	{
 		NumSet = std::vector<bool>(n, true);
 
-		for (int i = 2; i < n; ++i)
+		for (long i = 2; i < n; ++i)
 		{
 			if (NumSet[i])
 			{
-				for (int j = 2*i; j < n; j += i)
+				for (long j = 2*i; j < n; j += i)
 				{
 					NumSet[j] = false;
 				}
@@ -24,12 +24,12 @@ namespace Utils
 		}
 	}
 
-	bool Seive::IsPrime(int n)
+	bool Seive::IsPrime(long n)
 	{
 		return NumSet[n];
 	}
 
-	int_generator Seive::PrimeGenerator(int index)
+	int_generator Seive::PrimeGenerator(long index)
 	{
 		while (index < NumSet.size()) {
 			if (NumSet[index])

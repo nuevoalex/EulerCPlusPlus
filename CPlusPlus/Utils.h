@@ -22,11 +22,11 @@ namespace Utils
 			std::vector<bool> NumSet;
 
 		public:
-			Seive(int max);
+			Seive(long max);
 
-			bool IsPrime(int n);
+			bool IsPrime(long n);
 
-			int_generator PrimeGenerator(int start = 0);
+			int_generator PrimeGenerator(long start = 0);
 	};
 
 	class Factorizer
