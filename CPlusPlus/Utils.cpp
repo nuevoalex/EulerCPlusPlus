@@ -2,6 +2,7 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <unordered_set>
 #include <experimental/generator>
 #include "Utils.h"
@@ -151,91 +152,104 @@ namespace Utils
 		return retval;
 	}
 
-BigNum::BigNum(int orig)
-{
-	Init(orig);
-}
-
-BigNum::BigNum(const BigNum& other)
-{
-	m_original = other.m_original;
-	m_digits = other.m_digits;
-}
-
-void BigNum::Init(int orig)
-{
-	m_original = orig;
-	int digitValue = m_original;
-	m_digits.clear();
-	while (digitValue > 0)
+	string_vector split(std::string str, char delimiter)
 	{
-		m_digits.push_back(digitValue % 10);
-		digitValue /= 10;
-	}
-}
+		string_vector internal;
+		std::stringstream ss(str);
+		std::string tok;
 
-void BigNum::Add(const BigNum& other)
-{
-	for (int i = 0; i < other.m_digits.size(); ++i)
-	{
-		if (i >= m_digits.size())
-			m_digits.push_back(0);
+		while (getline(ss, tok, delimiter)) {
+			internal.push_back(tok);
+		}
 
-		m_digits[i] += other.m_digits[i];
+		return internal;
 	}
 
-	for (int j = 0; j < m_digits.size(); ++j)
+	BigNum::BigNum(int orig)
 	{
-		if (m_digits[j] >= 10)
+		Init(orig);
+	}
+
+	BigNum::BigNum(const BigNum& other)
+	{
+		m_original = other.m_original;
+		m_digits = other.m_digits;
+	}
+
+	void BigNum::Init(int orig)
+	{
+		m_original = orig;
+		int digitValue = m_original;
+		m_digits.clear();
+		while (digitValue > 0)
 		{
-			if (j + 1 == m_digits.size())
-				m_digits.push_back(1);
-			else
-				m_digits[j + 1] += 1;
-
-			m_digits[j] %= 10;
+			m_digits.push_back(digitValue % 10);
+			digitValue /= 10;
 		}
 	}
-}
 
-void BigNum::Mult(int n)
-{
-	BigNum orig(*this);
-	for (int i = 1; i < n; ++i)
+	void BigNum::Add(const BigNum& other)
 	{
-		Add(orig);
-	}
-}
+		for (int i = 0; i < other.m_digits.size(); ++i)
+		{
+			if (i >= m_digits.size())
+				m_digits.push_back(0);
 
-void BigNum::Exp(int n)
-{
-	for (int i = 1; i < n; ++i)
+			m_digits[i] += other.m_digits[i];
+		}
+
+		for (int j = 0; j < m_digits.size(); ++j)
+		{
+			if (m_digits[j] >= 10)
+			{
+				if (j + 1 == m_digits.size())
+					m_digits.push_back(1);
+				else
+					m_digits[j + 1] += 1;
+
+				m_digits[j] %= 10;
+			}
+		}
+	}
+
+	void BigNum::Mult(int n)
 	{
-		Mult(m_original);
+		BigNum orig(*this);
+		for (int i = 1; i < n; ++i)
+		{
+			Add(orig);
+		}
 	}
-}
 
-int BigNum::DigitSum()
-{
-	int retval = 0;
-	for (int i = 0; i < m_digits.size(); ++i)
+	void BigNum::Exp(int n)
 	{
-		retval += m_digits[i];
+		for (int i = 1; i < n; ++i)
+		{
+			Mult(m_original);
+		}
 	}
-	return retval;
-}
 
-int BigNum::NumDigits()
-{
-	return m_digits.size();
-}
-
-std::ostream& operator<<(std::ostream& os, const BigNum& bigNum)
-{
-	for (int i = bigNum.m_digits.size() - 1; i >= 0; --i)
+	int BigNum::DigitSum()
 	{
-		os << bigNum.m_digits[i];
+		int retval = 0;
+		for (int i = 0; i < m_digits.size(); ++i)
+		{
+			retval += m_digits[i];
+		}
+		return retval;
 	}
-	return os;
-}
+
+	int BigNum::NumDigits()
+	{
+		return m_digits.size();
+	}
+
+	std::ostream& operator<<(std::ostream& os, const BigNum& bigNum)
+	{
+		for (int i = bigNum.m_digits.size() - 1; i >= 0; --i)
+		{
+			os << bigNum.m_digits[i];
+		}
+		return os;
+	}
 }

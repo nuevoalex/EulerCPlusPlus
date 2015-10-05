@@ -83,6 +83,7 @@
     <ClCompile Include="Problem56.cpp" />
     <ClCompile Include="Problem57.cpp" />
     <ClCompile Include="Problem58.cpp" />
+    <ClCompile Include="Problem59.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>

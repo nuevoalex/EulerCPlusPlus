@@ -13,6 +13,8 @@
 typedef std::vector<int> int_vector;
 typedef std::experimental::generator<int> int_generator;
 typedef std::unordered_set<int> int_set;
+typedef std::vector<std::string> string_vector;
+typedef std::vector<char> char_vector;
 
 namespace Utils
 {
@@ -51,6 +53,8 @@ namespace Utils
 	long long Factorial(int n, int min = 1);
 
 	long nCr(int n, int r);
+
+	string_vector split(std::string str, char delimiter);
 
 	class BigNum
 	{
